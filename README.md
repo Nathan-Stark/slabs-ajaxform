@@ -6,7 +6,7 @@
 $APPLICATION->IncludeComponent(
 	"bitrix:form.result.new", 
 	"",
-    [
+	[
 		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
 		"CHAIN_ITEM_LINK" => "",
