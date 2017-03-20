@@ -27,3 +27,5 @@ $APPLICATION->IncludeComponent(
 	false
 );
 ```
+Обязательно USE_EXTENDED_ERRORS в значение Y
+
