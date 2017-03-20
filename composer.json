@@ -1,0 +1,14 @@
+{
+    "name": "starlabs/form.result.new",
+    "description": "Стандартные формы битрикс работающиее на ajax. 3 шаблона на выбор, bootstrap, uikit, fancybox2",
+    "type": "bitrix-d7-template",
+    "authors": [
+        {
+            "name": "Nathan Stark",
+            "email": "nathan@starlabs.su"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1"
+    }
+}
