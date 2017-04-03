@@ -1,16 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
 <?if ($arResult["isFormNote"] != "Y" && $arResult["isFormErrors"] != "Y") {?>
-    <form name="<?=$arResult["arForm"]["SID"]?>" action="/" method="POST" enctype="multipart/form-data" class="form-ajax">
-
-        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-
-                </div>
-            </div>
-        </div>
-
+    <form name="<?=$arResult["arForm"]["SID"]?>" action="?" method="POST" enctype="multipart/form-data" class="form-ajax">
         <input type="hidden" name="sessid" id="sessid" value="<?=bitrix_sessid()?>">
         <input type="hidden" name="WEB_FORM_ID" value="<?=$arParams["WEB_FORM_ID"]?>">
 
@@ -36,11 +27,12 @@
     </form>
 <?}elseif($arResult["isFormNote"] == "Y"){
     $APPLICATION->RestartBuffer();
+    header('Content-Type: application/json; charset=utf-8');
     echo json_encode(["note"=>$arResult["FORM_NOTE"]]);
     die();
 }elseif($arResult["isFormErrors"] == "Y"){
     $APPLICATION->RestartBuffer();
-
+    header('Content-Type: application/json; charset=utf-8');
     foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion) {
         $tagName = "form_".$arQuestion["STRUCTURE"][0]["FIELD_TYPE"]."_".$arQuestion["STRUCTURE"][0]["QUESTION_ID"];
 
