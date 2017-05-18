@@ -14,7 +14,7 @@
         <?}?>
 
         <?foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion) {
-            $tagName = "form_".$arQuestion["STRUCTURE"][0]["FIELD_TYPE"]."_".$arQuestion["STRUCTURE"][0]["QUESTION_ID"];
+            $tagName = "form_".$arQuestion["STRUCTURE"][0]["FIELD_TYPE"]."_".$arQuestion["STRUCTURE"][0]["ID"];
             ?>
             <div class="field">
                 <input type="text" placeholder="<?=$arQuestion["CAPTION"]?>" name="<?=$tagName?>"/>
